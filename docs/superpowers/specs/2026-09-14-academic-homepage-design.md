@@ -40,16 +40,19 @@ The publication list will include:
 
 ## Visual Direction
 
+Use `https://samxrl.github.io/` as the visual reference for overall information density and hierarchy: a compact top navigation, a left identity sidebar, and a broad main reading column with section anchors. Reproduce the general academic-homepage character without copying its wording or assets.
+
 Use a single light theme with a white background. The visual language should be restrained, precise, and academic:
 
 - deep navy for headings and active navigation;
 - near-black body text and cool gray metadata;
 - thin neutral dividers and minimal borders;
 - generous whitespace and a readable editorial measure;
+- a compact portrait in the left identity sidebar on desktop, moving above the content on narrow screens;
 - compact publication cards or list items with clear venue and year hierarchy;
 - no gradients, decorative hero artwork, dark mode, or oversized marketing-style hero section.
 
-The supplied CV portrait and all other personal photographs must not appear on the site. The identity area should rely on typography and concise research positioning instead.
+Use the user-supplied photograph `C:\Users\liu\AppData\Local\Temp\codex-clipboard-bacc5d6d-c22a-4a5e-9696-a39e0fb5875f.jpg` as the profile portrait. Present it with a centered face-aware crop using layout styling; do not use the portrait embedded in the CV. Do not apply generative edits or materially alter the photograph.
 
 ## Responsive and Accessibility Behavior
 
@@ -77,8 +80,8 @@ Site-wide identity and contact information will live in the template configurati
 - Confirm all visible biographical claims against the supplied CV.
 - Verify the five DOI links.
 - Inspect desktop and mobile layouts for clipping, overflow, hierarchy, contrast, and accidental dark-mode behavior.
-- Confirm there are no remaining template names, sample posts, sample social accounts, or personal photos.
+- Confirm there are no remaining template names, sample posts, sample social accounts, or photographs other than the user-supplied profile portrait.
 
 ## Acceptance Criteria
 
-The design is complete when the feature branch contains a buildable Academic Pages-based site that uses a white-only theme, contains only verified CV-derived academic content, shows a concise research profile, research interests, education, and the five selected publications, contains no portrait, research-experience section, CV download, or Awards section, and is ready for the user's review before updating the published branch.
+The design is complete when the feature branch contains a buildable Academic Pages-based site that follows the compact sidebar-and-content character of the approved visual reference, uses a white-only theme, includes the user-supplied profile portrait, contains only verified CV-derived academic content, shows a concise research profile, research interests, education, and the five selected publications, contains no research-experience section, CV download, or Awards section, and is ready for the user's review before updating the published branch.
