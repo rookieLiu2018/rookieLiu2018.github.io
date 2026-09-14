@@ -18,11 +18,13 @@ The primary audience is researchers, conference attendees, prospective collabora
 
 ## Information Architecture
 
-The first version will contain three primary destinations:
+The first version will use one compact homepage with three anchored sections:
 
 1. **About** - name, current role, affiliation, contact information, concise research profile, and research interests.
 2. **Publications** - five selected publications with complete author lists, venues, years, and DOI links.
 3. **Education** - the three verified degree entries in a concise chronological presentation.
+
+The top navigation will link to these homepage anchors instead of sending visitors through separate content pages. Publication titles may link directly to DOI landing pages.
 
 Research experience, downloadable CV files, awards and honors, blog posts, teaching pages, talks, analytics, and contact forms are explicitly out of scope for this version.
 
@@ -64,7 +66,7 @@ Use the user-supplied photograph `C:\Users\liu\AppData\Local\Temp\codex-clipboar
 
 ## Content and Data Flow
 
-Site-wide identity and contact information will live in the template configuration. Overview and education content will live in Markdown pages. Publications will use the template's structured publication format so author, venue, year, and DOI presentation remain consistent. The source CV will remain outside the repository and will not be linked or published.
+Site-wide identity and contact information will live in the template configuration. The homepage Markdown will own the About, Publications, and Education sections so the full academic profile can be scanned without page changes. The source CV will remain outside the repository and will not be linked or published.
 
 ## Failure Handling
 
@@ -76,7 +78,7 @@ Site-wide identity and contact information will live in the template configurati
 ## Verification
 
 - Build the Jekyll site successfully using the template-supported workflow.
-- Check the homepage, Publications, and Education pages.
+- Check the About, Publications, and Education anchors on the homepage.
 - Confirm all visible biographical claims against the supplied CV.
 - Verify the five DOI links.
 - Inspect desktop and mobile layouts for clipping, overflow, hierarchy, contrast, and accidental dark-mode behavior.
