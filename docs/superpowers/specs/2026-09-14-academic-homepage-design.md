@@ -2,7 +2,7 @@
 
 ## Goal
 
-Replace the current placeholder-style personal site with a polished, English-language academic homepage based on the widely used Academic Pages template. The site should present Shifan Liu's research identity, selected publications, research experience, education, and downloadable CV clearly to academic visitors.
+Replace the current placeholder-style personal site with a polished, English-language academic homepage based on the widely used Academic Pages template. The site should present Shifan Liu's research identity, selected publications, and education clearly to academic visitors.
 
 ## Source and Delivery Strategy
 
@@ -14,23 +14,21 @@ Replace the current placeholder-style personal site with a polished, English-lan
 
 ## Audience and Primary Task
 
-The primary audience is researchers, conference attendees, prospective collaborators, and academic evaluators. A visitor should be able to understand the research focus, inspect representative work, verify publications through DOI links, and download the CV with minimal navigation.
+The primary audience is researchers, conference attendees, prospective collaborators, and academic evaluators. A visitor should be able to understand the research focus and verify representative publications through DOI links with minimal navigation.
 
 ## Information Architecture
 
-The first version will contain five primary destinations:
+The first version will contain three primary destinations:
 
 1. **About** - name, current role, affiliation, contact information, concise research profile, and research interests.
-2. **Research** - three focused research themes drawn from the CV: historical-bug-driven testing of deep learning frameworks, transfer testing of deep learning compilers, and AI-assisted software maintenance and evolution.
-3. **Publications** - five selected publications with complete author lists, venues, years, and DOI links.
-4. **Experience** - research experience and education in a concise chronological presentation.
-5. **CV** - a direct link to the supplied PDF, stored as a downloadable site asset.
+2. **Publications** - five selected publications with complete author lists, venues, years, and DOI links.
+3. **Education** - the three verified degree entries in a concise chronological presentation.
 
-Awards and honors are explicitly out of scope for this version because no verified award information was provided. Blog posts, teaching pages, talks, analytics, and contact forms are also out of scope.
+Research experience, downloadable CV files, awards and honors, blog posts, teaching pages, talks, analytics, and contact forms are explicitly out of scope for this version.
 
 ## Content Source of Truth
 
-The supplied PDF at `E:\data-Processing\AScI_Application_Shifan_Liu_2026\01_CV.pdf` is the source of truth for biography, research interests, education, research experience, publications, email address, and affiliation. Content may be shortened for web readability but must not introduce unsupported claims or metrics.
+The supplied PDF at `E:\data-Processing\AScI_Application_Shifan_Liu_2026\01_CV.pdf` is the source of truth for biography, research interests, education, publications, email address, and affiliation. It is an input reference only and must not be copied into the public site. Content may be shortened for web readability but must not introduce unsupported claims or metrics.
 
 The publication list will include:
 
@@ -63,7 +61,7 @@ The supplied CV portrait and all other personal photographs must not appear on t
 
 ## Content and Data Flow
 
-Site-wide identity and contact information will live in the template configuration. Long-form overview content will live in Markdown pages. Publications will use the template's structured publication format so author, venue, year, and DOI presentation remain consistent. The CV PDF will be copied unchanged into the site's public files directory and linked from both navigation and the About page.
+Site-wide identity and contact information will live in the template configuration. Overview and education content will live in Markdown pages. Publications will use the template's structured publication format so author, venue, year, and DOI presentation remain consistent. The source CV will remain outside the repository and will not be linked or published.
 
 ## Failure Handling
 
@@ -75,12 +73,12 @@ Site-wide identity and contact information will live in the template configurati
 ## Verification
 
 - Build the Jekyll site successfully using the template-supported workflow.
-- Check the homepage, Research, Publications, Experience, and CV link.
+- Check the homepage, Publications, and Education pages.
 - Confirm all visible biographical claims against the supplied CV.
-- Verify the five DOI links and the downloadable CV asset.
+- Verify the five DOI links.
 - Inspect desktop and mobile layouts for clipping, overflow, hierarchy, contrast, and accidental dark-mode behavior.
 - Confirm there are no remaining template names, sample posts, sample social accounts, or personal photos.
 
 ## Acceptance Criteria
 
-The design is complete when the feature branch contains a buildable Academic Pages-based site that uses a white-only theme, contains only verified CV-derived academic content, shows the five selected publications and three research themes, provides the CV download, contains no portrait or Awards section, and is ready for the user's review before updating the published branch.
+The design is complete when the feature branch contains a buildable Academic Pages-based site that uses a white-only theme, contains only verified CV-derived academic content, shows a concise research profile, research interests, education, and the five selected publications, contains no portrait, research-experience section, CV download, or Awards section, and is ready for the user's review before updating the published branch.
