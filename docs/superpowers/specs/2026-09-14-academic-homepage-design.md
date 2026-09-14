@@ -57,7 +57,7 @@ The supplied CV portrait and all other personal photographs must not appear on t
 - Keep body text at a comfortable reading size and avoid horizontal scrolling.
 - Use semantic headings, lists, links, and navigation landmarks.
 - Ensure keyboard-visible focus states and sufficient text/link contrast on white.
-- Give DOI and CV links descriptive accessible labels.
+- Give DOI links descriptive accessible labels.
 
 ## Content and Data Flow
 
