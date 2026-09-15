@@ -58,6 +58,34 @@ class AcademicHomepageContract(unittest.TestCase):
         self.assertFalse((ROOT / "_pages" / "cv.md").exists())
         self.assertFalse((ROOT / "_pages" / "publications.html").exists())
 
+    def test_dormant_cv_and_collection_configuration_is_removed(self):
+        removed_paths = (
+            "scripts/update_cv_json.sh",
+            "scripts/cv_markdown_to_json.py",
+            "_data/cv.json",
+            "_data/authors.yml",
+            "_includes/cv-template.html",
+            "_layouts/cv-layout.html",
+            "_layouts/json_cv",
+            "_sass/layout/_json_cv.scss",
+        )
+        for path in removed_paths:
+            with self.subTest(path=path):
+                self.assertFalse((ROOT / path).exists(), path)
+
+        config = read("_config.yml")
+        self.assertNotRegex(config, r"(?m)^\s*-\s*files\s*$")
+        self.assertNotRegex(
+            config,
+            r"(?m)^\s{2}(?:teaching|publications|portfolio|talks):\s*$",
+        )
+        self.assertNotRegex(
+            config,
+            r"(?m)^\s+type:\s*(?:teaching|publications|portfolio|talks)\s*$",
+        )
+        self.assertNotRegex(config, r"(?m)^(?:category|tag)_archive:\s*$")
+        self.assertNotIn('"layout/json_cv"', read("assets/css/main.scss"))
+
 
 if __name__ == '__main__':
     unittest.main()

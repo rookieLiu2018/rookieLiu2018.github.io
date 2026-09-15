@@ -4,6 +4,8 @@
 # Ignore the contents of the _site directory and other cache directories
 _site/
 .sass-cache/
+__pycache__/
+*.py[cod]
 
 # Ignore the directory for local files during development
 local/
