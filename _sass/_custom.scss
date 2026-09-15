@@ -19,6 +19,11 @@ body {
   font-weight: 500;
 }
 
+.page__footer {
+  position: relative;
+  bottom: auto;
+}
+
 .page__title {
   margin-bottom: 1.25rem;
   color: #173f6b;
@@ -119,5 +124,11 @@ button:focus-visible {
 
   .education-item > span {
     grid-row: auto;
+  }
+}
+
+@media (min-width: 925px) {
+  .author__urls li {
+    white-space: normal;
   }
 }
