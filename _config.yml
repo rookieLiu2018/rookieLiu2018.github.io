@@ -167,10 +167,13 @@ exclude:
   - assets/js/theme.js
   - assets/js/plugins
   - assets/js/vendor
+  - AGENTS.md
   - CHANGELOG
   - Capfile
   - config
+  - docker-compose.yaml
   - Dockerfile
+  - docs
   - Gemfile
   - Gruntfile.js
   - gulpfile.js
@@ -181,6 +184,8 @@ exclude:
   - package.json*
   - Rakefile
   - README
+  - scripts
+  - tests
   - tmp
   - vendor
 keep_files:

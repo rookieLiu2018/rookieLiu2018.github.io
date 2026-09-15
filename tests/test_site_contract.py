@@ -86,6 +86,16 @@ class AcademicHomepageContract(unittest.TestCase):
         self.assertNotRegex(config, r"(?m)^(?:category|tag)_archive:\s*$")
         self.assertNotIn('"layout/json_cv"', read("assets/css/main.scss"))
 
+    def test_build_output_is_locally_reviewable_and_excludes_internal_files(self):
+        base_path = read("_includes/base_path")
+        self.assertIn("assign base_path = site.baseurl", base_path)
+        self.assertNotIn("site.url | append: site.baseurl", base_path)
+
+        config = read("_config.yml")
+        for path in ("docs", "tests", "scripts", "AGENTS.md", "docker-compose.yaml"):
+            with self.subTest(path=path):
+                self.assertRegex(config, rf'(?m)^\s*-\s*["\']?{path}["\']?\s*$')
+
 
 if __name__ == '__main__':
     unittest.main()
