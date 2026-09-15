@@ -1,0 +1,125 @@
+html {
+  scroll-behavior: smooth;
+  background: #fff;
+}
+
+body {
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.masthead {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #e7e9ed;
+  box-shadow: none;
+}
+
+.masthead::after {
+  content: none;
+}
+
+.greedy-nav a {
+  font-weight: 500;
+}
+
+.page__title {
+  color: #173f6b;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+}
+
+.author__avatar img {
+  width: 190px;
+  height: 190px;
+  max-width: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 42%;
+  padding: 0;
+  border: 1px solid #e7e9ed;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.sidebar .author__name {
+  color: #173f6b;
+  font-size: 1.35rem;
+}
+
+.homepage-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 6rem;
+}
+
+.homepage-section h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  color: #173f6b;
+  border-bottom: 1px solid #e7e9ed;
+  font-size: 1.55rem;
+}
+
+.homepage-section h3 {
+  color: #173f6b;
+  font-size: 1.15rem;
+}
+
+.publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.publication-list li {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e7e9ed;
+}
+
+.publication-year {
+  color: #68717d;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e7e9ed;
+}
+
+.education-date {
+  grid-row: 1 / span 2;
+  color: #68717d;
+  font-variant-numeric: tabular-nums;
+}
+
+.education-item p {
+  margin: 0.2rem 0 0;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(36, 95, 158, 0.45);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .author__avatar img {
+    width: 136px;
+    height: 136px;
+  }
+
+  .publication-list li,
+  .education-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education-date {
+    grid-row: auto;
+  }
+}
