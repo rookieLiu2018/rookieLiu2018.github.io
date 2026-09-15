@@ -22,7 +22,7 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 <section id="publications" class="homepage-section" markdown="1">
 
-## Publications
+## Publications {#publications-heading}
 
 <ol class="publication-list">
   <li>
@@ -51,7 +51,7 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 <section id="education" class="homepage-section" markdown="1">
 
-## Education
+## Education {#education-heading}
 
 <div class="education-list">
   <div class="education-item">

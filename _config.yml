@@ -164,6 +164,7 @@ exclude:
   - .jekyll-assets-cache
   - .sass-cache
   - assets/js/_main.js
+  - assets/js/theme.js
   - assets/js/plugins
   - assets/js/vendor
   - CHANGELOG
