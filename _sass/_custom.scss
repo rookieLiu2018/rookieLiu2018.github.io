@@ -38,7 +38,7 @@ body {
   box-shadow: none;
 }
 
-.author__name {
+.sidebar .author__name {
   color: #173f6b;
   font-size: 1.35rem;
 }
@@ -101,7 +101,7 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(36, 95, 158, .35);
+  outline: 3px solid #245f9e;
   outline-offset: 3px;
 }
 
