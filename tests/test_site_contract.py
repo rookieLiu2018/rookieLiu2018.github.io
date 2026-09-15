@@ -9,7 +9,7 @@ def read(path):
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-class SiteContractTest(unittest.TestCase):
+class AcademicHomepageContract(unittest.TestCase):
     def test_identity_and_navigation(self):
         config = read("_config.yml")
         self.assertRegex(config, r'(?m)^title\s*:\s*["\']?Shifan Liu["\']?\s*$')
@@ -47,13 +47,14 @@ class SiteContractTest(unittest.TestCase):
         self.assertGreater(portrait.stat().st_size, 100000)
         self.assertNotIn("append: '_dark'", read("assets/css/main.scss"))
         self.assertNotIn('id="theme-toggle"', read("_includes/masthead.html"))
-        self.assertIn("--global-bg-color", read("_sass/_themes.scss"))
+        self.assertIn("--global-bg-color", read("_sass/theme/_default_light.scss"))
         self.assertIn("background: #fff", read("_sass/_custom.scss"))
 
     def test_example_content_is_removed(self):
-        for directory in ("_posts", "_talks", "_teaching", "_portfolio", "_publications"):
-            path = ROOT / directory
-            self.assertTrue(not path.exists() or not any(path.iterdir()))
+        for dirname in ("_posts", "_talks", "_teaching", "_portfolio", "_publications"):
+            with self.subTest(directory=dirname):
+                path = ROOT / dirname
+                self.assertTrue(not path.exists() or not any(path.iterdir()), dirname)
         self.assertFalse((ROOT / "_pages" / "cv.md").exists())
         self.assertFalse((ROOT / "_pages" / "publications.html").exists())
 
