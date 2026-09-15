@@ -15,7 +15,7 @@ body {
   box-shadow: none;
 }
 
-.masthead__menu-item {
+.masthead__menu-item a {
   font-weight: 500;
 }
 
@@ -28,15 +28,17 @@ body {
 .author__avatar img {
   width: 190px;
   height: 190px;
+  max-width: none;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: 50% 42%;
+  padding: 0;
   border: 1px solid #e1e4e8;
   border-radius: 50%;
   box-shadow: none;
 }
 
-.sidebar .author__name {
+.author__name {
   color: #173f6b;
   font-size: 1.35rem;
 }
@@ -60,8 +62,8 @@ body {
 }
 
 .publication-list {
-  margin: 0;
-  padding: 0;
+  margin-left: 0;
+  padding-left: 0;
   list-style: none;
 }
 
@@ -87,7 +89,7 @@ body {
   border-bottom: 1px solid var(--global-border-color);
 }
 
-.education-date {
+.education-item > span {
   grid-row: 1 / span 2;
   color: #68717d;
   font-variant-numeric: tabular-nums;
@@ -111,11 +113,11 @@ button:focus-visible {
 
   .publication-list li,
   .education-item {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: .35rem;
   }
 
-  .education-date {
+  .education-item > span {
     grid-row: auto;
   }
 }
