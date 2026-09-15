@@ -96,6 +96,16 @@ class AcademicHomepageContract(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertRegex(config, rf'(?m)^\s*-\s*["\']?{path}["\']?\s*$')
 
+    def test_sitemap_and_ci_do_not_publish_unverified_content(self):
+        sitemap = read("_pages/sitemap.md")
+        self.assertIn("post.title | strip", sitemap)
+        self.assertIn('page_title != ""', sitemap)
+
+        workflow = read(".github/workflows/jekyll-build.yml")
+        contract_command = "python -m unittest discover -s tests -v"
+        self.assertIn(contract_command, workflow)
+        self.assertLess(workflow.index(contract_command), workflow.index("- name: Build site"))
+
 
 if __name__ == '__main__':
     unittest.main()
