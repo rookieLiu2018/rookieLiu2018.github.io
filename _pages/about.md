@@ -6,17 +6,78 @@ author_profile: true
 redirect_from:
   - /about/
   - /about.html
+papers:
+  - year: 2026
+    id: cpmt
+    title: "CPMT: A Collaborative Metamorphic Relations and Test Cases Prioritization Approach for Metamorphic Testing"
+    authors: "Chang-ai Sun, Shifan Liu, An Fu, and Jiaming Zhang"
+    venue: "Information and Software Technology"
+    details: "190, Article 107975"
+    doi: 10.1016/j.infsof.2025.107975
+  - year: 2025
+    title: "SEOCD: Detecting Obsolete Code Comments by Fusing Semantic Features and Expert Features"
+    authors: "Zhanqi Cui, Shifan Liu, Li Li, and Liwei Zheng"
+    venue: "Expert Systems with Applications"
+    details: "280, Article 127470"
+    doi: 10.1016/j.eswa.2025.127470
+  - year: 2025
+    title: "GITG: Automatic Issue Title Generation Method for Gitee Platform"
+    authors: "Jun Yang, Shifan Liu, Xiang Chen, and Zhanqi Cui"
+    venue: "Acta Electronica Sinica (电子学报)"
+    details: "53(5), 1559–1570. In Chinese"
+    doi: 10.12263/DZXB.20240434
+  - year: 2024
+    title: "MMCUP: Automatic Code Comment Updating by Fusing Multimodal Information"
+    authors: "Shifan Liu, Zhanqi Cui, Xiang Chen, and Li Li"
+    venue: "Chinese Journal of Computers (计算机学报)"
+    details: "47(1), 172–189. In Chinese"
+    doi: 10.11897/SP.J.1016.2024.00172
+  - year: 2023
+    title: "TBCUP: A Transformer-Based Code Comments Updating Approach"
+    authors: "Shifan Liu, Zhanqi Cui, Xiang Chen, Jun Yang, Li Li, and Liwei Zheng"
+    venue: "IEEE 47th Annual Computers, Software, and Applications Conference (COMPSAC)"
+    details: "892–897"
+    doi: 10.1109/COMPSAC57700.2023.00119
+  - year: 2023
+    title: "SICUP: A Comment Updating Approach based on Structural Information"
+    authors: "Shifan Liu, Zhanqi Cui, and Ruilin Xie"
+    venue: "International Workshop on Software Engineering & Deep Learning (SE&DL), co-located with SANER"
+    details: "970–971"
+    doi: 10.1109/SANER56733.2023.00118
+  - year: 2023
+    title: "OC-Detector: Detecting Smart Contract Vulnerabilities Based on Clustering Opcode Instructions"
+    authors: "Xiguo Gu, Liwei Zheng, Huiwen Yang, Shifan Liu, and Zhanqi Cui"
+    venue: "International Journal of Software Engineering and Knowledge Engineering (IJSEKE)"
+    details: "33(11–12), 1673–1700"
+    doi: 10.1142/S0218194023410061
+  - year: 2023
+    title: "Smart Contract Vulnerability Detection Based on Clustering Opcode Instructions"
+    authors: "Xiguo Gu, Huiwen Yang, Shifan Liu, and Zhanqi Cui"
+    venue: "International Conference on Software Engineering and Knowledge Engineering (SEKE)"
+    details: "398–403"
+    doi: 10.18293/SEKE2023-183
+  - year: 2022
+    title: "Improving Code Clone Detection Accuracy and Efficiency based on Code Complexity Analysis"
+    authors: "Haochen Jin, Zhanqi Cui, Shifan Liu, and Liwei Zheng"
+    venue: "International Conference on Dependable Systems and Their Applications (DSA)"
+    details: "64–72"
+    doi: 10.1109/DSA56465.2022.00017
 ---
 
 <section id="about" class="homepage-section" markdown="1">
 
-I am a Ph.D. student in Computer Science and Technology at the University of Science and Technology Beijing (USTB), supervised by Prof. Chang-ai Sun. My research focuses on software testing and quality assurance for deep learning frameworks and compilers, with particular interests in historical-defect-driven testing and AI-assisted software maintenance.
+I am a Ph.D. student in Computer Science and Technology at the University of Science and Technology Beijing (USTB), supervised by Prof. Chang-ai Sun. I study software testing and quality assurance for deep learning frameworks and compilers. My research uses historical defects to design new tests and explores how AI can support software maintenance.
 
-## Research Interests
+</section>
 
-- Software Testing
-- Deep Learning Framework and Compiler Quality Assurance
-- Historical-Defect-Driven Testing
+<section id="news" class="homepage-section" markdown="1">
+
+## News {#news-heading}
+
+<ul class="research-news">
+  <li><time datetime="2026-10">Oct 2026</time><span>Our paper <a href="#spectradl">SpectraDL</a> appeared in the proceedings of ISSTA 2026.</span></li>
+  <li><time datetime="2026-02">Feb 2026</time><span>Our paper <a href="#cpmt">CPMT</a> appeared in <em>Information and Software Technology</em>.</span></li>
+</ul>
 
 </section>
 
@@ -24,28 +85,36 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 ## Publications {#publications-heading}
 
-<ol class="publication-list">
-  <li>
-    <span class="publication-year">2026</span>
-    <div><strong>SpectraDL: A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs</strong><br><strong>Shifan Liu</strong>, Chang-ai Sun, Fulei Wu, and Wing-Kwong Chan.<br><em>Proceedings of the ACM on Software Engineering</em>, vol. 3, ISSTA, Article ISSTA103. Accepted research paper at ISSTA 2026. DOI: 10.1145/3832194.</div>
+<article id="spectradl" class="featured-paper" aria-labelledby="spectradl-title">
+  <div class="feature-copy">
+    <p class="feature-label">Featured paper <span>·</span> ISSTA 2026</p>
+    <h3 id="spectradl-title"><a href="https://doi.org/10.1145/3832194">SpectraDL: A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs</a></h3>
+    <p class="paper-authors"><strong>Shifan Liu</strong>, Chang-ai Sun, Fulei Wu, and Wing-Kwong Chan.</p>
+    <p class="paper-venue"><em>Proceedings of the ACM on Software Engineering</em>, vol. 3, ISSTA, 2361–2381.</p>
+    <p>SpectraDL uses past bug reports and fixes to design tests for related operators, even across frameworks. Across four deep learning frameworks, it found <strong>125 previously unknown bugs</strong>, of which developers confirmed <strong>107</strong>.</p>
+  </div>
+  <figure class="transfer-diagram" aria-label="How SpectraDL transfers tests">
+    <div class="diagram-inputs">
+      <div><span>Issues and fixes</span><b>Bug patterns</b></div>
+      <div><span>Operator docs</span><b>Test specifications</b></div>
+    </div>
+    <div class="diagram-step">Match operators by semantics and input structure</div>
+    <div class="diagram-output">Cross-framework tests</div>
+  </figure>
+</article>
+
+<ul class="publication-list" aria-label="Other publications">
+{% for paper in page.papers %}
+  <li{% if paper.id %} id="{{ paper.id }}"{% endif %}>
+    <span class="publication-year">{{ paper.year }}</span>
+    <div>
+      <a class="paper-title" href="https://doi.org/{{ paper.doi }}">{{ paper.title | escape }}</a>
+      <p class="paper-authors">{{ paper.authors | escape | replace: "Shifan Liu", "<strong>Shifan Liu</strong>" }}.</p>
+      <p class="paper-venue"><em>{{ paper.venue | escape }}</em>, {{ paper.details | escape }}.</p>
+    </div>
   </li>
-  <li>
-    <span class="publication-year">2026</span>
-    <div><a href="https://doi.org/10.1016/j.infsof.2025.107975"><strong>CPMT: A Collaborative Metamorphic Relations and Test Cases Prioritization Approach for Metamorphic Testing</strong></a><br>Chang-ai Sun, <strong>Shifan Liu</strong>, An Fu, and Jiaming Zhang.<br><em>Information and Software Technology</em>, vol. 190, Article 107975.</div>
-  </li>
-  <li>
-    <span class="publication-year">2025</span>
-    <div><a href="https://doi.org/10.1016/j.eswa.2025.127470"><strong>SEOCD: Detecting Obsolete Code Comments by Fusing Semantic Features and Expert Features</strong></a><br>Zhanqi Cui, <strong>Shifan Liu</strong>, Li Li, and Liwei Zheng.<br><em>Expert Systems with Applications</em>, vol. 280, Article 127470.</div>
-  </li>
-  <li>
-    <span class="publication-year">2024</span>
-    <div><a href="https://doi.org/10.11897/SP.J.1016.2024.00172"><strong>MMCUP: Automatic Code Comment Updating by Fusing Multimodal Information</strong></a><br><strong>Shifan Liu</strong>, Zhanqi Cui, Xiang Chen, and Li Li.<br><em>Chinese Journal of Computers</em>, vol. 47, no. 1, pp. 172-189. In Chinese.</div>
-  </li>
-  <li>
-    <span class="publication-year">2023</span>
-    <div><a href="https://doi.org/10.1109/COMPSAC57700.2023.00119"><strong>TBCUP: A Transformer-Based Code Comments Updating Approach</strong></a><br><strong>Shifan Liu</strong>, Zhanqi Cui, Xiang Chen, Jun Yang, Li Li, and Liwei Zheng.<br><em>2023 IEEE 47th Annual Computers, Software, and Applications Conference (COMPSAC)</em>, pp. 892-897.</div>
-  </li>
-</ol>
+{% endfor %}
+</ul>
 
 </section>
 
