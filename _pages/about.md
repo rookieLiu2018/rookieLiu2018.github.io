@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Shifan Liu"
+heading: "About me"
 excerpt: "Academic homepage of Shifan Liu"
 author_profile: true
 redirect_from:
@@ -75,8 +76,8 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 ## News {#news-heading}
 
 <ul class="research-news">
-  <li><time datetime="2026-10">Oct 2026</time><span>Our paper <a href="#spectradl">SpectraDL</a> appeared in the proceedings of ISSTA 2026.</span></li>
-  <li><time datetime="2026-02">Feb 2026</time><span>Our paper <a href="#cpmt">CPMT</a> appeared in <em>Information and Software Technology</em>.</span></li>
+  <li><time datetime="2026-10">Oct 2026</time><span><a href="#spectradl">SpectraDL</a> was published at ISSTA 2026.</span></li>
+  <li><time datetime="2026-02">Feb 2026</time><span><a href="#cpmt">CPMT</a> was published in <em>Information and Software Technology</em>.</span></li>
 </ul>
 
 </section>
@@ -86,27 +87,34 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 ## Publications {#publications-heading}
 
 <article id="spectradl" class="featured-paper" aria-labelledby="spectradl-title">
-  <div class="feature-copy">
-    <p class="feature-label">Featured paper <span>·</span> ISSTA 2026</p>
-    <h3 id="spectradl-title"><a href="https://doi.org/10.1145/3832194">SpectraDL: A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs</a></h3>
+  <header class="feature-heading">
+    <p class="feature-label"><strong>ISSTA 2026</strong><span aria-hidden="true"> / </span>Featured paper</p>
+    <h3 id="spectradl-title">SpectraDL</h3>
+    <p class="feature-subtitle">A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs</p>
     <p class="paper-authors"><strong>Shifan Liu</strong>, Chang-ai Sun, Fulei Wu, and Wing-Kwong Chan.</p>
-    <p class="paper-venue"><em>Proceedings of the ACM on Software Engineering</em>, vol. 3, ISSTA, 2361–2381.</p>
-    <p>SpectraDL uses past bug reports and fixes to design tests for related operators, even across frameworks. Across four deep learning frameworks, it found <strong>125 previously unknown bugs</strong>, of which developers confirmed <strong>107</strong>.</p>
-  </div>
-  <figure class="transfer-diagram" aria-label="How SpectraDL transfers tests">
-    <div class="diagram-inputs">
-      <div><span>Issues and fixes</span><b>Bug patterns</b></div>
-      <div><span>Operator docs</span><b>Test specifications</b></div>
+  </header>
+  <div class="feature-body">
+    <figure class="paper-figure">
+      <a href="{{ site.baseurl }}/images/spectradl-workflow.pdf" aria-label="Open the original SpectraDL workflow figure as a vector PDF">
+        <img src="{{ site.baseurl }}/images/spectradl-workflow.png" width="2400" height="1611" alt="SpectraDL extracts operator test specifications, abstracts bug patterns and retrieves related operators, then generates and executes test cases." />
+      </a>
+      <figcaption>Figure 2. The overall workflow of SpectraDL.</figcaption>
+    </figure>
+    <div class="feature-notes">
+      <p>SpectraDL turns historical bug reports and fixes into tests for related operators across deep learning frameworks.</p>
+      <p>Across four frameworks, it found <strong>125 previously unknown bugs</strong>. Developers confirmed <strong>107</strong>.</p>
+      <p class="paper-venue"><em>Proceedings of the ACM on Software Engineering</em>, vol. 3, ISSTA, 2361–2381.</p>
+      <a class="read-paper" href="https://doi.org/10.1145/3832194">Read the paper <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="diagram-step">Match operators by semantics and input structure</div>
-    <div class="diagram-output">Cross-framework tests</div>
-  </figure>
+  </div>
 </article>
 
 <ul class="publication-list" aria-label="Other publications">
+{% assign last_year = "" %}
 {% for paper in page.papers %}
   <li{% if paper.id %} id="{{ paper.id }}"{% endif %}>
-    <span class="publication-year">{{ paper.year }}</span>
+    <span class="publication-year{% if last_year == paper.year %} repeated-year{% endif %}">{{ paper.year }}</span>
+    {% assign last_year = paper.year %}
     <div>
       <a class="paper-title" href="https://doi.org/{{ paper.doi }}">{{ paper.title | escape }}</a>
       <p class="paper-authors">{{ paper.authors | escape | replace: "Shifan Liu", "<strong>Shifan Liu</strong>" }}.</p>
