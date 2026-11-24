@@ -80,6 +80,8 @@ papers:
 
 <section id="about" class="homepage-section" markdown="1">
 
+I am a Ph.D. student in Computer Science and Technology at the University of Science and Technology Beijing (USTB), supervised by Prof. Chang-ai Sun.
+
 My research focuses on the reliability of deep learning systems. I develop automated testing techniques for frameworks and compilers, and I study how bugs in these systems affect the applications built on them.
 
 </section>
