@@ -1,13 +1,22 @@
 ---
 permalink: /
 title: "Shifan Liu"
-heading: "About me"
-excerpt: "Academic homepage of Shifan Liu"
+heading: "About"
 author_profile: true
+excerpt: "Academic homepage of Shifan Liu"
 redirect_from:
   - /about/
   - /about.html
 papers:
+  - year: 2026
+    id: spectradl
+    title: "SpectraDL: A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs"
+    authors: "Shifan Liu, Chang-ai Sun, Fulei Wu, and Wing-Kwong Chan"
+    venue: "Proceedings of the ACM on Software Engineering"
+    details: "vol. 3, ISSTA 2026, 2361–2381"
+    doi: 10.1145/3832194
+    figure: /images/spectradl-workflow.pdf
+    thumbnail: /images/spectradl-workflow.png
   - year: 2026
     id: cpmt
     title: "CPMT: A Collaborative Metamorphic Relations and Test Cases Prioritization Approach for Metamorphic Testing"
@@ -16,18 +25,22 @@ papers:
     details: "190, Article 107975"
     doi: 10.1016/j.infsof.2025.107975
   - year: 2025
+    id: seocd
     title: "SEOCD: Detecting Obsolete Code Comments by Fusing Semantic Features and Expert Features"
     authors: "Zhanqi Cui, Shifan Liu, Li Li, and Liwei Zheng"
     venue: "Expert Systems with Applications"
     details: "280, Article 127470"
     doi: 10.1016/j.eswa.2025.127470
   - year: 2025
+    original_title: "GITG：面向Gitee平台的issue标题自动生成方法"
     title: "GITG: Automatic Issue Title Generation Method for Gitee Platform"
     authors: "Jun Yang, Shifan Liu, Xiang Chen, and Zhanqi Cui"
     venue: "Acta Electronica Sinica (电子学报)"
     details: "53(5), 1559–1570. In Chinese"
     doi: 10.12263/DZXB.20240434
   - year: 2024
+    id: mmcup
+    original_title: "MMCUP：融合多模态信息的代码注释自动更新方法"
     title: "MMCUP: Automatic Code Comment Updating by Fusing Multimodal Information"
     authors: "Shifan Liu, Zhanqi Cui, Xiang Chen, and Li Li"
     venue: "Chinese Journal of Computers (计算机学报)"
@@ -67,7 +80,7 @@ papers:
 
 <section id="about" class="homepage-section" markdown="1">
 
-I am a Ph.D. student in Computer Science and Technology at the University of Science and Technology Beijing (USTB), supervised by Prof. Chang-ai Sun. I study software testing and quality assurance for deep learning frameworks and compilers. My research uses historical defects to design new tests and explores how AI can support software maintenance.
+My research focuses on the reliability of deep learning systems. I develop automated testing techniques for frameworks and compilers, and I study how bugs in these systems affect the applications built on them.
 
 </section>
 
@@ -75,9 +88,10 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 ## News {#news-heading}
 
-<ul class="research-news">
-  <li><time datetime="2026-10">Oct 2026</time><span><a href="#spectradl">SpectraDL</a> was published at ISSTA 2026.</span></li>
-  <li><time datetime="2026-02">Feb 2026</time><span><a href="#cpmt">CPMT</a> was published in <em>Information and Software Technology</em>.</span></li>
+<ul class="news-list">
+  <li><time class="news-date" datetime="2026-11">Nov 2026</time><span>I’m visiting <a href="https://haoyetiancoder.github.io/">Professor Tian Haoye</a>’s group at Aalto University through December.</span></li>
+  <li><time class="news-date" datetime="2026-10">Oct 2026</time><span>Our paper <a href="#spectradl">SpectraDL</a> appeared at ISSTA 2026.</span></li>
+  <li><time class="news-date" datetime="2026-02">Feb 2026</time><span>Our paper <a href="#cpmt">CPMT</a> appeared in <em>Information and Software Technology</em>.</span></li>
 </ul>
 
 </section>
@@ -86,39 +100,30 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 ## Publications {#publications-heading}
 
-<article id="spectradl" class="featured-paper" aria-labelledby="spectradl-title">
-  <header class="feature-heading">
-    <p class="feature-label"><strong>ISSTA 2026</strong><span aria-hidden="true"> / </span>Featured paper</p>
-    <h3 id="spectradl-title">SpectraDL</h3>
-    <p class="feature-subtitle">A Historical Issue-Driven, Test Specification-Assisted Transfer Testing Approach for Deep Learning Frameworks via LLMs</p>
-    <p class="paper-authors"><strong>Shifan Liu</strong>, Chang-ai Sun, Fulei Wu, and Wing-Kwong Chan.</p>
-  </header>
-  <div class="feature-body">
-    <figure class="paper-figure">
-      <a href="{{ site.baseurl }}/images/spectradl-workflow.pdf" aria-label="Open the original SpectraDL workflow figure as a vector PDF">
-        <img src="{{ site.baseurl }}/images/spectradl-workflow.png" width="2400" height="1611" alt="SpectraDL extracts operator test specifications, abstracts bug patterns and retrieves related operators, then generates and executes test cases." />
-      </a>
-      <figcaption>Figure 2. The overall workflow of SpectraDL.</figcaption>
-    </figure>
-    <div class="feature-notes">
-      <p>SpectraDL turns historical bug reports and fixes into tests for related operators across deep learning frameworks.</p>
-      <p>Across four frameworks, it found <strong>125 previously unknown bugs</strong>. Developers confirmed <strong>107</strong>.</p>
-      <p class="paper-venue"><em>Proceedings of the ACM on Software Engineering</em>, vol. 3, ISSTA, 2361–2381.</p>
-      <a class="read-paper" href="https://doi.org/10.1145/3832194">Read the paper <span aria-hidden="true">↗</span></a>
-    </div>
-  </div>
-</article>
-
-<ul class="publication-list" aria-label="Other publications">
-{% assign last_year = "" %}
+<ul class="publication-list" aria-label="Publications by year">
+{% assign previous_year = nil %}
 {% for paper in page.papers %}
-  <li{% if paper.id %} id="{{ paper.id }}"{% endif %}>
-    <span class="publication-year{% if last_year == paper.year %} repeated-year{% endif %}">{{ paper.year }}</span>
-    {% assign last_year = paper.year %}
-    <div>
-      <a class="paper-title" href="https://doi.org/{{ paper.doi }}">{{ paper.title | escape }}</a>
-      <p class="paper-authors">{{ paper.authors | escape | replace: "Shifan Liu", "<strong>Shifan Liu</strong>" }}.</p>
-      <p class="paper-venue"><em>{{ paper.venue | escape }}</em>, {{ paper.details | escape }}.</p>
+  <li class="publication{% unless paper.year == previous_year %} year-start{% endunless %}"{% if paper.id %} id="{{ paper.id }}"{% endif %}>
+    <span class="pub-year{% if paper.year == previous_year %} repeat-year{% endif %}">{{ paper.year }}</span>
+    {% assign previous_year = paper.year %}
+    <div class="pub-info">
+      <h3><a href="https://doi.org/{{ paper.doi }}"{% if paper.original_title %} lang="zh" title="{{ paper.title | escape }}"{% endif %}>{{ paper.original_title | default: paper.title | escape }}</a></h3>
+      <p class="authors">{{ paper.authors | escape | replace: "Shifan Liu", "<strong>Shifan Liu</strong>" }}.</p>
+      <p class="citation"><em>{{ paper.venue | escape }}</em>, {{ paper.details | escape }}.</p>
+      {% if paper.figure %}
+      <div class="paper-description">
+        <div>
+          <p>SpectraDL uses an LLM to extract bug patterns from past reports and fixes. It matches patterns to operators with similar behavior and input constraints, then generates tests for those operators.</p>
+          <p>Starting with 419 reports from PyTorch and TensorFlow, we tested those two frameworks as well as PaddlePaddle and MindSpore. SpectraDL found <strong>125 previously unknown bugs</strong>, of which developers confirmed <strong>107</strong>.</p>
+        </div>
+        <figure class="workflow">
+          <a href="{{ site.baseurl }}{{ paper.figure }}" aria-label="Open Figure 2 from SpectraDL (PDF)">
+            <img src="{{ site.baseurl }}{{ paper.thumbnail }}" width="2400" height="1611" alt="SpectraDL workflow from bug reports and operator specifications to generated tests." />
+            <span>Figure 2 <i class="fas fa-expand" aria-hidden="true"></i></span>
+          </a>
+        </figure>
+      </div>
+      {% endif %}
     </div>
   </li>
 {% endfor %}
@@ -126,26 +131,10 @@ I am a Ph.D. student in Computer Science and Technology at the University of Sci
 
 </section>
 
-<section id="education" class="homepage-section" markdown="1">
+<section id="contributions" class="homepage-section" markdown="1">
 
-## Education {#education-heading}
+## Open-source contributions {#contributions-heading}
 
-<div class="education-list">
-  <div class="education-item">
-    <span class="education-date">2024.09-Present</span>
-    <strong>Ph.D. Student, Computer Science and Technology</strong>
-    <p>University of Science and Technology Beijing, Beijing, China<br>Supervisor: Prof. Chang-ai Sun.</p>
-  </div>
-  <div class="education-item">
-    <span class="education-date">2021.09-2024.06</span>
-    <strong>M.S., Computer Science and Technology</strong>
-    <p>Beijing Information Science and Technology University, Beijing, China<br>Supervisor: Prof. Zhanqi Cui.</p>
-  </div>
-  <div class="education-item">
-    <span class="education-date">2016.09-2020.06</span>
-    <strong>B.Eng., Computer Science and Technology</strong>
-    <p>Beijing Information Science and Technology University, Beijing, China</p>
-  </div>
-</div>
+We have reported **218 bugs** to [PyTorch](https://github.com/pytorch/pytorch/issues/141487), [TensorFlow](https://github.com/tensorflow/tensorflow/issues/94657), [PaddlePaddle](https://github.com/PaddlePaddle/Paddle/issues/75189), [MindSpore](https://gitee.com/mindspore/mindspore/issues/ICU4KB), and [ONNX Runtime](https://github.com/microsoft/onnxruntime/issues/33244). Project maintainers have confirmed **187** of them.
 
 </section>

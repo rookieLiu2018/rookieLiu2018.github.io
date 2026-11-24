@@ -21,10 +21,12 @@ repository               : "rookieLiu2018/rookieLiu2018.github.io"
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
-  avatar           : "profile.jpg"
+  avatar           : "profile-sensoji.jpg"
   name             : "Shifan Liu"
+  native_name      : "刘诗凡"
   pronouns         :
-  bio              : "Ph.D. Student in Computer Science and Technology"
+  bio              : "University of Science and Technology Beijing"
+  interests        : "Software testing, deep learning systems, software maintenance"
   location         : "Beijing, China"
   employer         : "University of Science and Technology Beijing"
   uri              :
@@ -34,7 +36,8 @@ author:
   googlescholar    :
   inspire-hep      :
   impactstory      :
-  orcid            :
+  dblp             : "https://dblp.org/pid/329/2584.html"
+  orcid            : "https://orcid.org/0009-0001-1454-934X"
   semantic         :
   ssrn             :
   pubmed           :
